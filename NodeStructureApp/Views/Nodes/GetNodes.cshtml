@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Node Tree View";
+}
+
+<h2>Node Tree View</h2>
+
+<div id="treeView"></div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("GetNodes", "Nodes")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var nodes = buildTree(data);
+                    renderTree(nodes, $('#treeView'));
+                }
+            });
+
+            function buildTree(nodes) {
+                var nodeMap = {};
+                var roots = [];
+
+                // Create a map of nodes by their ID
+                nodes.forEach(function (node) {
+                    node.children = [];
+                    nodeMap[node.NodeId] = node;
+                });
+
+                // Build the tree structure
+                nodes.forEach(function (node) {
+                    if (node.ParentNodeId !== null) {
+                        nodeMap[node.ParentNodeId].children.push(node);
+                    } else {
+                        roots.push(node);
+                    }
+                });
+
+                return roots;
+            }
+
+            function renderTree(nodes, container) {
+                var ul = $('<ul>');
+
+                nodes.forEach(function (node) {
+                    var li = $('<li>').text(node.NodeName);
+                    if (node.children.length > 0) {
+                        renderTree(node.children, li);
+                    }
+                    ul.append(li);
+                });
+
+                container.append(ul);
+            }
+        });
+    </script>
+}
+

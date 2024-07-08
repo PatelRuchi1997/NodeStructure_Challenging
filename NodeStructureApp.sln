@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeStructureApp", "NodeStructureApp\NodeStructureApp.csproj", "{DE2193AB-91F9-4521-A9EE-600D0AFB4CAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE2193AB-91F9-4521-A9EE-600D0AFB4CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2193AB-91F9-4521-A9EE-600D0AFB4CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2193AB-91F9-4521-A9EE-600D0AFB4CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2193AB-91F9-4521-A9EE-600D0AFB4CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6537479C-2166-4E61-8AD9-1C2F7EEE8321}
+	EndGlobalSection
+EndGlobal

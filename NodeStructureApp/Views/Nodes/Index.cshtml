@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NodeStructureApp.NodeTbl>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.min.css" />
+
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NodeId)</th>
+            <th>@Html.DisplayNameFor(model => model.NodeName)</th>
+            <th>@Html.DisplayNameFor(model => model.ParentNodeId)</th>
+            <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.NodeId)</td>
+                <td>@Html.DisplayFor(modelItem => item.NodeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ParentNodeId)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.NodeId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.NodeId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>

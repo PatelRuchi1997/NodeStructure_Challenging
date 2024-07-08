@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChallengCodingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NodeTbl">
+    <Key>
+      <PropertyRef Name="NodeId" />
+    </Key>
+    <Property Name="NodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeName" Type="varchar" MaxLength="500" />
+    <Property Name="ParentNodeId" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ChallengCodingDBModelStoreContainer">
+    <EntitySet Name="NodeTbl" EntityType="Self.NodeTbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
